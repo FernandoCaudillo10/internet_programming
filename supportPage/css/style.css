@@ -1,0 +1,33 @@
+.header-image{
+    width: 100%;
+    height: 20em;
+}
+.body{
+    position: relative;
+}
+.main{
+    width: 50%;
+    border: solid 1px black;
+}
+.middle{
+    display: flex;
+}
+.article{
+    width: 50%;
+}
+.help-icon-wrap{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+.help-icon{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    
+    width: 3em;
+    height: 3em;
+}
+.container{
+    padding-right: 200px;
+}
