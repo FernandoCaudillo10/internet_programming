@@ -28,7 +28,8 @@ $(document).ready(function(){
     
     function imageSelected(){
         $("#rate")
-            .html("<select id='likeRate'>"
+            .html("<label for='selectRate'>How much do you like your dog?</label>"
+                + "<select name='selectRate' id='likeRate'>"
                 + "<option value='op1'>Not even a bit</option>"
                 + "<option value='op2'>Maybe a little</option>"
                 + "<option value='op3'>Im undecided</option>"
