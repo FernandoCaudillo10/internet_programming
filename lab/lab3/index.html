@@ -5,6 +5,7 @@
     <head>
         <title>Lab 3 - QUIZ</title>
         <meta charset='utf-8'/>
+        <link rel="stylesheet" href="style.css" />
     </head>
     
     <body>
@@ -12,45 +13,103 @@
             <h2>Welcome to the hardest Quiz in the world!!!</h2>
             <div>
                 <form>
+                    <!-- QUESTION 1 -->
                     <h4>What is the second word in the title of this page?</h4>
-                    <input type="radio" id="ot" name="q1"/>
-                    <label for="ot"></label>
-                    <input type="radio" name="q1" id="Welcome"/>
-                    <label for="Welcome"></label>
-                    <input type="radio" name="q1" id="to"/>
-                    <label for="to"></label>
-                    <input type="radio" name="q1" id="Qweewee"/>
-                    <label for="Qweewee"></label>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q1" id="q1-1"/>
+                            <label for="ot">ot</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q1" id="q1-2"/>
+                            <label for="q1-2">welcome</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q1" id="q1-3"/>
+                            <label for="q1-3">to</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q1" id="q1-4"/>
+                            <label for="q1-4">Qweewee</label>
+                        </div>
                     
+                    <!-- QUESTION 2 -->
                     <h4>CHeck all valid HTML tags:</h4>
-                    <input type="checkbox" name="q2" value="<div>"/>
-                    <input type="checkbox" name="q2" value="<hello>"/>
-                    <input type="checkbox" name="q2" value="p"/>
-                    <input type="checkbox" name="q2" value="<Qweewee>"/>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q2" id="q2-1"/>
+                            <label for="q2-1">&lt;div&gt;</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q2" id="q2-2"/>
+                            <label for="q2-2">&lt;hello&gt;</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q2" id="q2-3"/>
+                            <label for="q2-3">p</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q2" id="q2-4"/>
+                            <label for="q2-4">&lt;Qweewee&gt;</label>
+                        </div>
                     
+                    <!-- QUESTION 3 -->
                     <h4>Can you spell your name correctly?</h4>
-                    <input type="text" name="q3"/>
+                        <input type="text" name="q3" value="beedo beedo"/>
+                        
+                    <!-- QUESTION 4 -->
+                    <h4>If you had a dollar would should you spend it on?</h4>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q4" id="q4-1"/>
+                            <label for="q4-1">puppies</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q4" id="q4-2"/>
+                            <label for="q4-2">food</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q4" id="q4-3"/>
+                            <label for="q4-3">Computer Science</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="radio" name="q4" id="q4-4"/>
+                            <label for="q4-4">All of the Above and Nothing else</label>
+                        </div>
                     
+                    <!-- QUESTION 5 -->
                     <h4>What is the answer to life, the universe, and everything?</h4>
-                    <input type="radio" name="q4" value="ot"/>
-                    <input type="radio" name="q4" value="Welcome"/>
-                    <input type="radio" name="q4" value="to"/>
-                    <input type="radio" name="q4" value="Qweewee"/>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q5" id="q5-1"/>
+                            <label for="q5-1">42</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q5" id="q5-2"/>
+                            <label for="q5-2">Computer Science</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q5" id="q5-3"/>
+                            <label for="q5-3">Javascript</label>
+                        </div>
+                        <div class="questAnsPair">
+                            <input type="checkbox" name="q5" id="q5-4"/>
+                            <label for="q5-4">Me</label>
+                        </div>
                     
-                    <h4>CHeck all valid HTML tags:</h4>
-                    <input type="checkbox" name="q5" value="<div>"/>
-                    <input type="checkbox" name="q5" value="<hello>"/>
-                    <input type="checkbox" name="q5" value="p"/>
-                    <input type="checkbox" name="q5" value="<Qweewee>"/>
+                    <!-- QUESTION 6 -->
+                    <h4>The Lab We He More For Science?!</h4>
+                        <input type="text" name="q6" value="yes"/>
+                        
+                    <!-- SUBMIT -->
+                    <div>
+                        <button type="button" id="submit">Submit Quiz</button>
+                    </div>
                     
-                    <h4>Can you spell your name correctly?</h4>
-                    <input type="text" name="q6"/>
-                    
-                    <button type="button" value="Submit"/>
+                    <h2 id="result"></h2>
                 </form>
             </div>
         </main>
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="functions.js"></script>
     </body>
     
 </html>

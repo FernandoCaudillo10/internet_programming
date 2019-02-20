@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="style.css" />
+        
+        <title>Puppies</title>
+    </head>
+    
+    <body>
+        
+        <header>
+            <h1 id="title">Adopt a puppy!</h1>
+        </header>
+        
+        <main>
+            
+            <form>
+                <!-- Number: amount of puppy images -->
+                <div>
+                    <label for="amount">How many puppy images?</label>
+                    <input type="number" name="amount" val="1">
+                </div>
+                
+                <div>
+                    <button type="button" id="submitAmount">Submit amount of puppies!</button>
+                    <h3 id="resultSubmitAmount"></h3>
+                </div>
+                
+                <!-- Radio: selection -->
+                <div id="displayImages">
+                </div>
+                
+                <!-- Button: Submit selection -->
+                <div id="submitSelectionContainer">
+                </div>
+                   
+                <!-- Selection: HOw much do you like this picture? --> 
+                <div id="rate">
+                </div> 
+                
+                <!-- Text: What will this puppy's name be? -->
+                <div id="puppyName">
+                </div>
+                
+                <!-- Text: What is your name? -->
+                <div id="ownerName">
+                </div>
+                
+                <div id="submitNames">
+                </div>
+                
+                <!-- Display All --> 
+                <div id="finalResult">
+                    <div id="displayAll">
+                    </div>
+                    <div id="displayAllImg">
+                    </div>
+                </div>
+            </form>
+            
+        </main>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+    </body>
+    
+</html>
