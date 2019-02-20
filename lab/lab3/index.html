@@ -24,7 +24,7 @@
                             <label for="q1-2">welcome</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="radio" name="q1" id="q1-3"/>
+                            <input type="radio" name="q1" id="q1-3" checked/>
                             <label for="q1-3">to</label>
                         </div>
                         <div class="questAnsPair">
@@ -35,11 +35,11 @@
                     <!-- QUESTION 2 -->
                     <h4>CHeck all valid HTML tags:</h4>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q2" id="q2-1"/>
+                            <input type="checkbox" name="q2" id="q2-1" checked/>
                             <label for="q2-1">&lt;div&gt;</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q2" id="q2-2"/>
+                            <input type="checkbox" name="q2" id="q2-2"checked/>
                             <label for="q2-2">&lt;hello&gt;</label>
                         </div>
                         <div class="questAnsPair">
@@ -47,14 +47,15 @@
                             <label for="q2-3">p</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q2" id="q2-4"/>
+                            <input type="checkbox" name="q2" id="q2-4"checked/>
                             <label for="q2-4">&lt;Qweewee&gt;</label>
                         </div>
                     
                     <!-- QUESTION 3 -->
                     <h4>Can you spell your name correctly?</h4>
+                    <div>
                         <input type="text" name="q3" value="beedo beedo"/>
-                        
+                    </div>
                     <!-- QUESTION 4 -->
                     <h4>If you had a dollar would should you spend it on?</h4>
                         <div class="questAnsPair">
@@ -67,41 +68,45 @@
                         </div>
                         <div class="questAnsPair">
                             <input type="radio" name="q4" id="q4-3"/>
-                            <label for="q4-3">Computer Science</label>
+                            <label for="q4-3">Computer Science material</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="radio" name="q4" id="q4-4"/>
+                            <input type="radio" name="q4" id="q4-4"checked/>
                             <label for="q4-4">All of the Above and Nothing else</label>
                         </div>
                     
                     <!-- QUESTION 5 -->
                     <h4>What is the answer to life, the universe, and everything?</h4>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q5" id="q5-1"/>
+                            <input type="checkbox" name="q5" id="q5-1"checked/>
                             <label for="q5-1">42</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q5" id="q5-2"/>
+                            <input type="checkbox" name="q5" id="q5-2"checked/>
                             <label for="q5-2">Computer Science</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q5" id="q5-3"/>
+                            <input type="checkbox" name="q5" id="q5-3"checked/>
                             <label for="q5-3">Javascript</label>
                         </div>
                         <div class="questAnsPair">
-                            <input type="checkbox" name="q5" id="q5-4"/>
+                            <input type="checkbox" name="q5" id="q5-4"checked/>
                             <label for="q5-4">Me</label>
                         </div>
                     
                     <!-- QUESTION 6 -->
                     <h4>The Lab We He More For Science?!</h4>
+                    <div>
                         <input type="text" name="q6" value="yes"/>
+                    </div>
                         
                     <!-- SUBMIT -->
                     <div>
                         <button type="button" id="submit">Submit Quiz</button>
                     </div>
-                    
+                    <div>
+                        <button style="display:none;" id="reset">Reset Quiz</button>
+                    </div>
                     <h2 id="result"></h2>
                 </form>
             </div>

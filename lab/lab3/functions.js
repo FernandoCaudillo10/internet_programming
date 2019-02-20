@@ -19,28 +19,51 @@ $(document).ready(function(){
             
         let correctAnswers = ["to","<div>", "<hello>", "<Qweewee>", "All of the Above and Nothing else", "42","Computer Science","Javascript","Me"];
         
-            console.log("checked:");
         $("input:checked").not("[type='text']").each(function() {
             console.log($(this).next().text() + ": " +$.inArray( $(this).next().text() , correctAnswers));
             if( $.inArray( $(this).next().text() , correctAnswers) > -1){
+                $(this).parent().css("background-color","green");
                 $(this).next().after("<img src='check.svg' />");
             }
             else{
+                $(this).parent().css("background-color","red");
                 $(this).next().after("<img src='clear.svg' />");
             }
         });
-     //       console.log("not checked:");
-     //   $("input").not(":checked").not("[type='text']").each(function() {
-     //       console.log($(this).next().text() + ": " +$.inArray( $(this).next().text() , correctAnswers));
-     //       if( $.inArray( $(this).next().text() , correctAnswers) == -1){
-     //           console.log("clear");
-     //           $(this).next().after("<img src='clear.svg' />");
-     //       }
-     //       else{
-     //           console.log("check");
-     //           $(this).next().after("<img src='check.svg' />");
-     //       }
-     //   });
+        
+        $("input").not(":checked").not("[type='text']").each(function() {
+            console.log($(this).next().text() + ": " +$.inArray( $(this).next().text() , correctAnswers));
+            if( $.inArray( $(this).next().text() , correctAnswers) > -1){
+                $(this).parent().css("background-color","red");
+                $(this).next().after("<img src='clear.svg' />");
+            }
+            else{
+                $(this).parent().css("background-color","green");
+                $(this).next().after("<img src='check.svg' />");
+            }
+        });
+        
+        if( $("input[name='q3']").val().length > 0 ){
+            $("input[name='q3']").parent().css("background-color","green");
+            $("input[name='q3']").after("<img src='check.svg' />");
+        }
+        else{
+            $("input[name='q3']").parent().css("background-color","red");
+            $("input[name='q3']").after("<img src='clear.svg' />");
+        }
+        if( $("input[name='q6']").val() == 'yes' ){
+            $("input[name='q6']").parent().css("background-color","green");
+            $("input[name='q6']").after("<img src='check.svg' />");
+        }
+        else{
+            $("input[name='q6']").css("background-color","red");
+            $("input[name='q6']").after("<img src='clear.svg' />");
+        }
+        
+        $("#submit").css("display", "none");
+        $("#reset").css("display","block").click(function(){
+           location.reload(); 
+        });
         
    });
    
