@@ -1,0 +1,49 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgb(230,230,230);
+}
+h1{
+    text-align: center;
+}
+legend{
+    margin-left: 5em;
+    font-size: 2em;
+}
+label{
+    font-size: 1.5em;
+}
+form div p{
+    display: inline;
+    margin-left: 1em;
+    font-size: 1.5em;
+}
+#errorZip{
+    color: red;
+}
+#city, #lat, #long{
+    color: rgb(100,100,100);
+}
+form div{
+    margin: .5em 0;
+    padding: .5em 0;
+}
+form div label{
+    margin-left: 5em;
+}
+div:nth-child(even){
+    box-shadow: 0 .1em .3em grey;
+}
+form div:nth-child(odd){
+    background-color: rgb(200,200,200);
+}
+#submit{
+    width: 5em;
+    margin-left: 10em;
+}
+#successResponse{
+    text-align: center;
+    color: green;
+    font-size: 3em;
+}

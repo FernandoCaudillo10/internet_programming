@@ -2,10 +2,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Earthquake Web API</title>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body id="dummybodyid">
   <header>
@@ -27,6 +24,23 @@
 		    <button type="button" id="update">Update</button>
 		    
 		</div>
+  
+  <div>
+      <script>
+        (function() {
+          var cx = '009961474045468955387:rguxbwapbym';
+          var gcse = document.createElement('script');
+          gcse.type = 'text/javascript';
+          gcse.async = true;
+          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gcse, s);
+        })();
+      </script>
+      <gcse:search></gcse:search>
+  </div>
+
+
 	</form>
 
   <div>
@@ -35,7 +49,7 @@
 
   <div id="earthquakeResult"></div>
   <div id="weatherResult"></div>
-
+  
   <script>
 		//$("input").change(getEarthquakes);
 		$("#update").click(getWeather);
@@ -48,12 +62,13 @@
 		       data:{
 		            "APPID": "e1eacb56b19660af814e8ab51a33911e",
 		            "q": $("#city").val(),
+		            "units": "imperial",
 		       },
 		       success: function(data,status){
 		           $("#weatherResult").html(
 		               "In " + $("#city").val() + " we have " +
-		               data["weather"][0]["main"] + " skies"
-		               );
+		               data["weather"][0]["main"] + " skies." + "<br/>"
+		               + "The temperature there is " + data["main"]["temp"]);
 		       },
 		       complete: function(data,status){
 		           
