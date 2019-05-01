@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>AJAX: Sign Up Page</title>
+        <link rel="stylesheet" href="style.css" type="text/css" /> 
+    </head>
+    
+    <body id="dummybodyid">
+      <h1> Sign Up Form </h1>
+    
+        <form>
+            <fieldset>
+                <legend>Sign Up</legend>
+                <div><label>First Name:</label><input type="text"></div>
+                <div><label>Last Name:</label><input type="text"></div>
+                <div><label>Email:</label><input type="text"></div>
+                <div><label>Phone Number:</label><input type="text"></div>
+                <div><label>Zip Code:</label><input type="text" id="zipCode">
+                  <p id="errorZip"></p></div>
+                <div><label>City:</label><p id="city"></p></div>
+                <div><label>Latitude:</label><p id="lat"></p></div>
+                <div><label>Longitude:</label><p id="long"></p></div>
+                <div><label id="state">State:</label><input type="text" id="stateChange"></div>
+                <div><label>Select a County:</label><select id="selectCounty"></select></div>
+                <div><label>Desired Username:</label><input type="text" id="username"><p id="userAvailability"></p></div>
+                <div><label>Password:</label><input type="password" id="password"></div>
+                <div><label>Type Password Again:</label><input type="password" id="passwordAgain"></div>
+                <div><button type="button" id="submit">Sign up!</button></div>
+                <h3 id="successResponse"></h3>
+            </fieldset>
+        </form>
+    </body>
+    
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+    <script>
+        
+        let userPassPair = {};
+        
+        $("#submit").click(checkUserPassPair);
+        $("#zipCode").keyup(getZipCodes);
+        $("#stateChange").keyup(updateCounties);
+        $("#username").keyup(userIsAvailable);
+        
+        function userIsAvailable(){
+            if($("#username").val() in userPassPair){
+                $("#userAvailability").html("Username is not Avalaible").css("color", "red");
+            }
+            else{
+                $("#userAvailability").html("Username is Avalaible").css("color", "green");
+            }
+        }
+        function checkUserPassPair(){
+            if($("#password").val() !== $("#passwordAgain").val()){
+                $("#successResponse").html("Passwords do not match.");
+                return;
+            }
+            else if($("#password").val() !== userPassPair[$("#username").val()] && userPassPair[$("#username").val()] !== undefined){
+                console.log(userPassPair[$("#username").val()]);
+                $("#successResponse").html("Password is incorrect.");
+                return;
+            }
+            else if($("#username").val() in userPassPair){
+                $("#successResponse").html("Username is taken");
+            }
+            
+            $("#successResponse").html("Success!");
+            userPassPair[$("#username").val()] = $("#password").val();
+            
+            $.ajax({
+               type: "get",
+               url: "./api.php",
+               data: $(this).serialize(),
+               success: function(data){
+                   console.log(data);
+               },
+               complete: function(data, statusText){
+                   console.log(data.status);
+                   console.log(statusText);
+               }
+            });
+            
+        }
+        function updateCounties(){
+            $.ajax({
+               type: "get",
+               url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
+               dataType: "json",
+               data:{
+                   "state": $("#stateChange").val()
+               },
+               success: function(data){
+                   $("#selectCounty").empty();
+                   
+                   for(let county of data){
+                       $("#selectCounty").append("<option>"+county["county"]+"</option>");
+               }
+               }
+            });
+        }
+        function getZipCodes(){
+            $.ajax({
+                type: "get",
+                url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+                dataType: "json",
+                data: {
+                    "zip": $("#zipCode").val()
+                },
+                success: function(data,status){
+                    if (data == false){
+                        $("#errorZip").html("Zip Code doesn't exist");
+                    }
+                    else{
+                        $("#errorZip").html("");
+                        
+                        $("#city").html(data["city"]);
+                        $("#lat").html(data["latitude"]);
+                        $("#long").html(data["longitude"]);
+                        
+                    }
+                },
+                complete: function(data,status){
+                    
+                }
+            });
+        }
+        
+    </script>
+
+</html>
