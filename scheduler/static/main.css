@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+.invitationLinkContainer{
+    display: flex;
+    justify-content: center;
+}
+.columnTitles{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    border-bottom: 1px black solid;
+}
+#timeSlotForm{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightgrey;
+    border-radius: 1em;
+    padding: 2em;
+}
+.deletePopUp{
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightgrey;
+    border-radius: 1em;
+    padding: 2em;
+}
+.appointment{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.appointmentContainer{
+    padding: 3em;
+}
+table{
+    margin-top: 10em;
+}
